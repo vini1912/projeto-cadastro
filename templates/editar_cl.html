@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="/static/assets/{{ usuario[4] }}" alt="" class="foto-perfil2">
+                <span class="ola">Seja Bem vindo, {{ usuario[1] }}!</span>
+                <li>
+                    <a href="#">Cliente</a>
+                    <ul>
+                        <li><a href="/cadastro_cl">Cadastro Cliente</a></li>
+                        <li><a href="/consulta_cl">Consultar Cliente</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Fornecedor</a>
+                    <ul>
+                        <li><a href="/cadastro_fn">Cadastro Fornecedor</a></li>
+                        <li><a href="/consulta_fn">Consultar Fornecedor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Usuario</a>
+                    <ul>
+                        <li><a href="/cadastro_us">Cadastro Usuario</a></li>
+                        <li><a href="/consulta_us">Consultar Usuario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form style="display: inline;" action="/sair" method="post">
+                        <button style="background-color: red; color: white; padding: 10px; border-radius: 5px;" type="submit">Sair</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+   
+    <div class="table-container2">
+        <h2> Editar Cadastro de Cliente</h2>
+        <form action="/editar_cl/{{ clientes[0] }}" method="post">
+            <div class="campo-form">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" placeholder="Digite o seu Nome" value="{{ clientes[1] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Digite seu Email" value="{{ clientes[2] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" placeholder="Digite seu Telefone" value="{{ clientes[3] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="end_rua">Rua:</label>
+                <input type="text" name="end_rua" placeholder="Digite sua Rua" value="{{ clientes[4] }}" required>
+            </div>
+           
+            <div class="campo-form">
+                <label for="end_num">Número:</label>
+                <input type="text" name="end_num" placeholder="Digite seu Número" value="{{ clientes[5] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="end_cid">Cidade:</label>
+                <input type="text" name="end_cid" placeholder="Digite sua Cidade" value="{{ clientes[6] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="end_est">Estado:</label>
+                <input type="text" name="end_est" placeholder="Digite seu Estado" value="{{ clientes[7] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="end_cep">CEP:</label>
+                <input type="text" name="end_cep" placeholder="Digite seu CEP" value="{{ clientes[8] }}" required>
+            </div>
+ 
+            <div class="campo-form">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF" value="{{ clientes[10] }}" required>
+            </div>
+ 
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>
+ 

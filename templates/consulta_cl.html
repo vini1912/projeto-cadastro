@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Clientes</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="/static/assets/{{ usuario[4] }}" alt="" class="foto-perfil2">
+                <span class="ola">Seja Bem vindo, {{ usuario[1] }}!</span>
+                <li>
+                    <a href="#">Cliente</a>
+                    <ul>
+                        <li><a href="/cadastro_cl">Cadastro Cliente</a></li>
+                        <li><a href="/consulta_cl">Consultar Cliente</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Fornecedor</a>
+                    <ul>
+                        <li><a href="/cadastro_fn">Cadastro Fornecedor</a></li>
+                        <li><a href="/consulta_fn">Consultar Fornecedor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Usuario</a>
+                    <ul>
+                        <li><a href="/cadastro_us">Cadastro Usuario</a></li>
+                        <li><a href="/consulta_us">Consultar Usuario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form style="display: inline;" action="/sair" method="post">
+                        <button style="background-color: red; color: white; padding: 10px; border-radius: 5px;" type="submit">Sair</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="table-container1">
+        <h2>Consulta de Clientes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Data de Cadastro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente[0] }}</td>
+                    <td>{{ cliente[1] }}</td>
+                    <td>{{ cliente[2] }}</td>
+                    <td>{{ cliente[3] }}</td>
+                    <td>{{ cliente[9] }}</td>
+                    <td>
+                        <a class="v" href="/ver_cl/{{ cliente[0] }}">Ver</a>
+                        <a class="edit" href="/editar_cl/{{ cliente[0] }}">Editar</a>
+                        <a class="excloi" href="/excluir_cl/{{ cliente[0] }}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

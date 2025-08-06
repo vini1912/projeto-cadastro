@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vizualização</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="/static/assets/{{ usuario[4] }}" alt="" class="foto-perfil2">
+                <span class="ola">Seja Bem vindo, {{ usuario[1] }}!</span>
+                <li>
+                    <a href="#">Cliente</a>
+                    <ul>
+                        <li><a href="/cadastro_cl">Cadastro Cliente</a></li>
+                        <li><a href="/consulta_cl">Consultar Cliente</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Fornecedor</a>
+                    <ul>
+                        <li><a href="/cadastro_fn">Cadastro Fornecedor</a></li>
+                        <li><a href="/consulta_fn">Consultar Fornecedor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Usuario</a>
+                    <ul>
+                        <li><a href="/cadastro_us">Cadastro Usuario</a></li>
+                        <li><a href="/consulta_us">Consultar Usuario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form style="display: inline;" action="/sair" method="post">
+                        <button style="background-color: red; color: white; padding: 10px; border-radius: 5px;" type="submit">Sair</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="table-container2">
+        <h2>Dados do Usuario</h2>
+        <div class="profile-container">
+            <img src="/static/assets/{{ usuarioos[4] }}" alt="" class="foto-perfil">
+            <div class="profile-container">
+                <div class="profile-details">
+                    <p><strong>Nome:</strong> {{ usuarioos[1] }}</p>
+                    <p><strong>Usuario:</strong> {{ usuarioos[2] }}</p>
+                    <p><strong>Senha:</strong> {{ usuarioos[3] }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a class="but1" href="/editar_us/{{ usuarioos[0] }}" class="link-editar">Editar</a>
+            <a class="but" href="/excluir_us/{{ usuarioos[0] }}" class="link-excluir">Excluir</a>
+        </div>
+    </div>
+</body>
+
+</html>

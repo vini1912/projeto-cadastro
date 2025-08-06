@@ -1,0 +1,1001 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/static/assets/galaxy.jpg'); /* Caminho para a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-color: #172031; /* Cor de fundo caso a imagem não carregue */
+}
+ 
+.Login {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 600px;
+    height: 500px;
+    padding: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar um efeito de elevação */
+}
+ 
+.Login h2 {
+    margin-left: 90px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+ 
+.Login .box-user {
+    margin-left: 20px;
+    position: relative;
+}
+ 
+.Login .box-user input {
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+ 
+.Login .box-user label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+ 
+.Login .box-user input:focus ~ label,
+.Login .box-user input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+ 
+.forget {
+    font-size: 17px;
+    color: #5b6b8b;
+    float: right;
+}
+ 
+.btn {
+    position: relative;
+    display: flex;
+    padding: 10px 2px;
+    color: #03e9f4;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: 25px;
+    transition: .5s;
+    overflow: hidden;
+}
+ 
+.btn:hover {
+    background: #03e9f4;
+    color: #172031;
+    border-radius: 5px;
+}
+ 
+.btn span {
+    position: absolute;
+    display: block;
+}
+ 
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn1 1s linear infinite;
+}
+ 
+@keyframes btn1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+ 
+.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn2 1s linear infinite;
+    animation-delay: .10s;
+}
+ 
+@keyframes btn2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+ 
+.btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn3 1s linear infinite;
+    animation-delay: .45s;
+}
+ 
+@keyframes btn3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+ 
+.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn4 1s linear infinite;
+    animation-delay: .70s;
+}
+ 
+@keyframes btn4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+ 
+/* Animação de entrada no carregamento */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+/* Efeito de transição suave nos inputs */
+.Login .box-user input {
+    transition: border-bottom 0.3s, color 0.3s;
+}
+ 
+.Login .box-user input:focus {
+    border-bottom: 1px solid #03e9f4; /* Cor da borda ao focar */
+}
+ 
+/* Efeito de sombra ao passar o mouse sobre o botão */
+.btn {
+    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona uma transição suave */
+}
+ 
+.btn:hover {
+    transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Sombra ao passar o mouse */
+}
+ 
+/* Efeito de brilho na caixa de login ao passar o mouse */
+.Login:hover {
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5), 0px 0px 20px #03e9f4; /* Efeito de brilho */
+}
+ 
+ 
+.Login {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 400px;
+    padding: 60px; /* Aumente a altura do formulário */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar um efeito de elevação */
+}
+ 
+/* Adicione uma margem superior ao botão de upload de imagem */
+.image-upload {
+    display: inline-block;
+    padding: 17px 20px; /* Mesma padronização de tamanho do botão "Entrar" */
+    color: #03e9f4; /* Cor do texto */
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-top: 10px; /* Ajuste aqui para mover o botão para cima */
+    margin-bottom: 30px; /* Adicione um espaço inferior se necessário */
+    transition: .5s;
+    overflow: hidden;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+ 
+/* Adiciona animação ao botão de upload */
+.image-upload span {
+    position: absolute;
+    display: block;
+}
+ 
+.image-upload span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn1 1s linear infinite;
+}
+ 
+.image-upload span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn2 1s linear infinite;
+    animation-delay: .10s;
+}
+ 
+.image-upload span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn3 1s linear infinite;
+    animation-delay: .45s;
+}
+ 
+.image-upload span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn4 1s linear infinite;
+    animation-delay: .70s;
+}
+
+.table-container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #03e9f4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para o texto */
+   
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Aumenta o tamanho levemente */
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #03e9f4;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    color: #ffffff;
+}
+
+tr {
+    transition: transform 0.3s ease; 
+}
+
+tr:hover {
+    background-color: rgba(3, 233, 244, 0.1);
+    transform: scale(1.02); 
+}
+
+.profile-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.edit-btn, .delete-btn {
+    background-color: #03e9f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #02b8d4; /* Cor ao passar o mouse */
+}
+
+.delete-btn {
+    background-color: #ff4d4d; /* Cor para o botão de excluir */
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a; /* Cor ao passar o mouse */
+}
+
+.view-btn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background-image: url('/static/assets/galaxy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #172031;
+    animation: fadeIn 1s ease-in-out;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+ 
+nav {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+ 
+nav a {
+    height: 50px;
+    color: #03e9f4;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+ 
+nav a:hover {
+    height: 50px;
+    background-color: rgba(3, 233, 244, 0.2);
+    transform: scale(1.05);
+}
+ 
+.table-container1 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px; /* Largura máxima do formulário */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-top: 70px;
+}
+
+.table-container2 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px; /* Largura máxima do formulário */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-top: 70px;
+}
+
+.table-container3 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px; /* Largura máxima do formulário */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-top: 5px;
+}
+ 
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #03e9f4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+ 
+form {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linhas */
+    justify-content: space-between; /* Espaço entre os campos */
+}
+ 
+.campo-form {
+    width: calc(50% - 10px); /* Ajusta a largura para dois campos por linha */
+    margin-bottom: 15px;
+}
+ 
+.campo-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #03e9f4;
+}
+ 
+.campo-form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background 0.3s ease;
+}
+ 
+.campo-form input:focus {
+    background: rgba(3, 233, 244, 0.2);
+    outline: none;
+}
+ 
+button {
+    background-color: #03e9f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    margin-left: 25px;
+}
+ 
+button:hover {
+    background-color: #02b8d4;
+}
+
+.ola{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.olaa{
+    font-size: 24px;
+    margin-top: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.profile-details p{
+    margin-bottom: 10px;
+}
+
+.but1{
+    margin-left: 590px;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: aquamarine;
+}
+
+.but{
+    text-decoration: none;
+    font-size: 20px;
+    color: red;
+}
+
+td a{
+    margin-right: 30px;
+}
+
+.v{
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;  
+}
+
+.edit{
+    text-decoration: none;
+    font-size: 20px;
+    color: aquamarine; 
+}
+
+.excloi{
+    text-decoration: none;
+    font-size: 20px;
+    color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/static/assets/galaxy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #172031;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #03e9f4;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #03e9f4;
+    background: transparent;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #03e9f4;
+    box-shadow: 0px 0px 5px #03e9f4;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #9fa8b2;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 12px;
+    color: #03e9f4;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #03e9f4;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #029ecf;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.link-back {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.link-back a {
+    color: #03e9f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-back a:hover {
+    text-decoration: underline;
+}
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('/static/assets/galaxy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #172031;
+    color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Efeito de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header e Menu Principal */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Logo */
+nav img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Menu Links */
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: rgba(3, 233, 244, 0.2);
+    color: #03e9f4;
+    transform: scale(1.1);
+}
+
+/* Botão de Logout */
+nav .logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav .logout-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsividade do Menu */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+nav .menu-toggle {
+    display: none;
+}
+
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Corpo */
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh;
+    background-image: url('/static/assets/galaxy.jpg'); /* Caminho para a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-color: #172031; /* Cor de fundo caso a imagem não carregue */
+}
+
+/* Estilização do cabeçalho */
+header {
+    width: auto; /* Adapta à largura do conteúdo */
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo dentro do header */
+}
+
+/* Menu principal */
+nav ul {
+    display: flex;
+    justify-content: center; /* Centraliza os itens no menu */
+    align-items: center;
+    list-style: none;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Itens principais do menu */
+nav ul li {
+    position: relative; /* Necessário para o dropdown */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(3, 233, 244, 0.2);
+    color: #03e9f4;
+    transform: scale(1.05);
+}
+
+/* Dropdown */
+nav ul li ul {
+    display: none; /* Esconde por padrão */
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do item principal */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o centro */
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Itens do dropdown */
+nav ul li ul li {
+    margin: 0;
+}
+
+nav ul li ul li a {
+    padding: 10px 15px;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover nos itens do dropdown */
+nav ul li ul li a:hover {
+    background-color: rgba(3, 233, 244, 0.2);
+    color: #03e9f4;
+}
+
+/* Mostrar dropdown ao passar o mouse */
+nav ul li:hover ul {
+    display: block; /* Mostra o dropdown */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px; /* Reduz o espaço entre itens */
+    }
+
+    nav ul li ul {
+        left: 0;
+        transform: none; /* Remove a centralização adicional */
+    }
+}
+
+.foto-perfil {
+    width: 120px;        
+    height: 120px;       
+    border-radius: 50%;  
+    object-fit: cover;   
+}
+
+
+.foto-perfil2 {
+    width: 70px;        
+    height: 70px;       
+    border-radius: 50%;  
+    object-fit: cover;   
+}

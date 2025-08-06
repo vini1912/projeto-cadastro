@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Fornecedor</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Cliente</a>
+                    <ul>
+                        <li><a href="/cadastro_cl">Cadastro Cliente</a></li>
+                        <li><a href="/consulta_cl">Consultar Cliente</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Fornecedor</a>
+                    <ul>
+                        <li><a href="/cadastro_fn">Cadastro Fornecedor</a></li>
+                        <li><a href="/consulta_fn">Consultar Fornecedor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Usuario</a>
+                    <ul>
+                        <li><a href="/cadastro_us">Cadastro Usuario</a></li>
+                        <li><a href="/consulta_us">Consultar Usuario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form style="display: inline;" action="/sair" method="post">
+                        <button style="background-color: red; color: white; padding: 10px; border-radius: 5px;" type="submit">Sair</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+   
+    <div class="table-container2">
+        <h2>Editar Cadastro de Usuarios</h2>
+        <form action="/editar_us/{{ usuarinho[0] }}" method="post" enctype="multipart/form-data">
+            <div class="campo-form">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" value="{{ usuarinho[1] }}" required>
+            </div>
+
+            <div class="campo-form">
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" value="{{ usuarinho[2] }}" required>
+            </div>
+
+            <div class="campo-form">
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" value="{{ usuarinho[3] }}" required>
+            </div>
+ 
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>
+ 

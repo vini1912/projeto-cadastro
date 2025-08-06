@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo!</title>
+    <script>
+        setTimeout(() => {
+            window.location.href = "/cadastro_cl";
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="thanos">
+        <div>
+            <h1 class="benvenuche">Bem-vindo, {{ usuario[1] }}!</h1>
+            <h2>Conheça o melhor sistema de gerenciamento!</h2>
+        </div>
+        <p class="texticulo">
+            Aqui, você pode efetuar o cadastro dos clientes, fornecedores e usuários.
+        </p>
+
+    </div>
+</body>
+</html>
